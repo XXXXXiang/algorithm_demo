@@ -4,6 +4,7 @@
 
 void showBinary(unsigned int);
 unsigned int BinaryToDecimial(unsigned __int32);
+void showbinary(__int32);
 
 struct node {
     int data;
@@ -40,6 +41,14 @@ void showBinary(unsigned int num) {
     printf("\n");
     //printf("%d", sum);
 }
+
+void showbinary(__int32 num) {
+    for (int i = 31;i>=0;i--) {
+        printf("%d",(num>>i)&1);
+    }
+    printf("\n");
+}
+
 
 unsigned int BinaryToDecimial(unsigned __int32 biNum) {
     unsigned int sum = 0;
