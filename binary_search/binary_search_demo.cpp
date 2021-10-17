@@ -6,6 +6,7 @@ int* creatSortedRandomList(int);
 int* bubbleSorting(int*,int);
 void printList(int*,int);
 int binarySearch(int*, int, int);
+bool binarySearch(int*, int, int, int)
 void printBinarySearch(int*,int, int, int);
 void printInfo();
 
@@ -120,4 +121,20 @@ void printBinarySearch(int* list,int len,int a,int b) {
             printf("%d ", list[i]);
     }
     printf("\n");
+}
+
+//Binary search by using recursion
+bool binarySearch(int* a, int target, int head, int tail) {
+    int mid = (tail + head) / 2;
+    if (target == a[mid])
+        return true;
+
+    else if (tail == head)
+        return false;
+        
+    else if (target > a[mid]) 
+        return binarySearch(a, target, mid+1, tail);
+
+    else
+        return binarySearch(a, target, head, mid-1);
 }
